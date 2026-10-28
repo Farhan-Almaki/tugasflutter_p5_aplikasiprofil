@@ -16,10 +16,18 @@
 
 ## Commit Untuk Hari Ke Hari
 
-### 🔹 Hari 1 (Struktur Awal & Pemisahan Widget)
-* **Pagi:** `feat: buat struktur awal profil pengguna ada avatar dan nama`
+### Hari 1 (Struktur Awal & Pemisahan Widget)
+* **Commit 1 :** `feat: buat struktur awal profil pengguna ada avatar dan nama`
   * *Penjelasan:* Buat struktur awal di `main.dart` dan `profile_page.dart` yang berisi foto profil dan nama/role.
-* **Siang/Sore:** `refactor: pisah tampilan avatar sama nama jadi widget sendiri`
+* **Commit 2 :** `refactor: pisah tampilan avatar sama nama jadi widget sendiri`
   * *Penjelasan:* Memisah tampilan foto dan nama ke widget `ProfileAvatar` dan `ProfileInfo`.
+
+---
+
+### Hari 2 (Baris Statistik Profil)
+* **Commit 1:** `feat: tambah baris statistik profil proyek followers dan following`
+  * *Penjelasan:* Menambahkan komponen baris berisi angka proyek, followers, dan following.
+* **Commit 2:** `refactor: pisah statistik profil jadi widget ProfileStats dan StatItem`
+  * *Penjelasan:* Memisah baris statistik ke widget terpisah `ProfileStats` dan `StatItem` biar reusable.
 
 ---
