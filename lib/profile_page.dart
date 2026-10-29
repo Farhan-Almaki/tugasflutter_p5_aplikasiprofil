@@ -22,9 +22,9 @@ class ProfilePage extends StatelessWidget {
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const ProfileAvatar(),
             const SizedBox(height: 16),
@@ -33,7 +33,7 @@ class ProfilePage extends StatelessWidget {
             const ProfileStats(),
             const SizedBox(height: 24),
 
-            // Judul Bagian Pengalaman Kerja/projek
+            // Judul Bagian Pengalaman projek
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
