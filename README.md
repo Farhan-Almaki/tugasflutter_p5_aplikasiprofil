@@ -31,3 +31,11 @@
   * *Penjelasan:* Memisah baris statistik ke widget terpisah `ProfileStats` dan `StatItem` biar reusable.
 
 ---
+
+### 🔹 Hari 3 (Daftar Pengalaman Projek)
+* **Commit 1 dan 2:** `feat: tambah list pengalaman projek pakai listview builder dan benerin padding biar rapi`
+  * *Penjelasan:* Menambahkan daftar pengalaman projek yang scrollable pakai `ListView.builder` dan `Expanded`.
+* **Commit 3:** `refactor: pisah kartu item projek jadi widget tersendiri ExperienceCard`
+  * *Penjelasan:* Memisah item tampilan kartu projek menjadi custom widget `ExperienceCard`.
+
+---
