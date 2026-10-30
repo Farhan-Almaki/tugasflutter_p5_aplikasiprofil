@@ -18,6 +18,50 @@ class _ProfilePageState extends State<ProfilePage> {
     'Projek Tugas - Website Penyewaan Perlengkapan Mendaki Gunung',
   ];
 
+  // Fungsi Dialog Edit Profil memakai setState
+  void _showEditDialog() {
+    final nameController = TextEditingController(text: userName);
+    final roleController = TextEditingController(text: role);
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Edit Profil'),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              TextField(
+                controller: nameController,
+                decoration: const InputDecoration(labelText: 'Nama Lengkap'),
+              ),
+              TextField(
+                controller: roleController,
+                decoration: const InputDecoration(labelText: 'Role / Pekerjaan'),
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('Batal'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  userName = nameController.text;
+                  role = roleController.text;
+                });
+                Navigator.pop(context);
+              },
+              child: const Text('Simpan'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +78,23 @@ class _ProfilePageState extends State<ProfilePage> {
             const ProfileAvatar(),
             const SizedBox(height: 16),
             ProfileInfo(userName: userName, role: role),
+            const SizedBox(height: 12),
+
+            // Tombol Edit Profil
+            ElevatedButton.icon(
+              onPressed: _showEditDialog,
+              icon: const Icon(Icons.edit, size: 18),
+              label: const Text('Edit Profil'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueAccent,
+                foregroundColor: Colors.white,
+              ),
+            ),
+
             const SizedBox(height: 24),
             const ProfileStats(),
             const SizedBox(height: 24),
 
-            // Judul Bagian Pengalaman projek
             const Align(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -48,8 +104,6 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const Divider(),
 
-            
-            // Menggunakan Custom Widget ExperienceCard
             Expanded(
               child: ListView.builder(
                 itemCount: experiences.length,

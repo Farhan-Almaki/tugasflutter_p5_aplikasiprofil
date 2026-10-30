@@ -39,3 +39,9 @@
   * *Penjelasan:* Memisah item tampilan kartu projek menjadi custom widget `ExperienceCard`.
 
 ---
+
+### 🔹 Hari 4 (State Management & Edit Profil)
+* **Commit 1:** `refactor: ngubah profile page jadi statefulwidget biar data profil bisa dinamis`
+  * *Penjelasan:* Mengubah `ProfilePage` dari `StatelessWidget` ke `StatefulWidget` agar data nama dan role bisa diubah.
+* **Commit 2:** `feat: menambah fitur popup untuk edit profil dan update tampilan pakai setstate`
+  * *Penjelasan:* Menambahkan dialog pop-up edit profil dan memperbarui nama/role secara langsung di layar memakai `setState()`.
